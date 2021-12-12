@@ -1,6 +1,9 @@
 #HOMEWORK
 #Homework Getting and Cleanning Data
 
+# Make melt() function available
+library(reshape2)
+
 #reading features and activity data
 features <- read.table("./UCI HAR Dataset/features.txt")
 activities <- read.table("./UCI HAR Dataset/activity_labels.txt")
@@ -53,4 +56,4 @@ dataset.tidy <- dcast(dataset.melt, activitylabel + subject ~ variable, mean)
 
 
 #creating a tidy dataset file  
-write.table(dataset.tidy, file = "tidydataset.txt" row.names = FALSE)
+write.table(dataset.tidy, file = "tidydataset.txt", row.names = FALSE)
